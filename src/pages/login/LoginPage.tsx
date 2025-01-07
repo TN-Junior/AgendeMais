@@ -20,7 +20,7 @@ const LoginPage: React.FC = () => {
       <div className="flex-1 flex justify-center items-center bg-gray-50">
         <form className="w-full max-w-md bg-white shadow-lg p-8 rounded-lg">
           <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-green-400 mb-6 text-center">
-            SAÚDE360
+            Agende+
           </h2>
           <div className="mb-4">
             <label className="block text-gray-700 mb-2">Email:</label>
@@ -38,7 +38,7 @@ const LoginPage: React.FC = () => {
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:outline-none"
             />
             <p className="text-gray-500 text-sm mt-1">
-              8 dígitos, com pelo menos 1 letra maiúscula.
+              7 dígitos, com pelo menos 1 letra maiúscula.
             </p>
           </div>
           <button
