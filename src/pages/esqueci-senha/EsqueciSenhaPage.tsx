@@ -6,16 +6,12 @@ const EsqueciSenhaPage: React.FC = () => {
       {/* Lado esquerdo com imagem */}
       <div className="flex-1 relative bg-green-900">
         <img
-          src="src/assets/medibackground.jpg"
+          src="src/assets/pexels-tima.jpg"  
           alt="Background"
           className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
         <div className="relative flex justify-center items-center h-full">
-          <div className="bg-white p-10 rounded-full shadow-md">
-            <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center">
-              <span className="text-white text-3xl font-bold">+</span>
-            </div>
-          </div>
+          
         </div>
       </div>
 
