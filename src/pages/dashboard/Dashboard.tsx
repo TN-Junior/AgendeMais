@@ -14,11 +14,11 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const statsResponse = await axios.get("http://localhost:8080/api/stats");
+        const statsResponse = await axios.get("http://localhost:8081/api/stats");
         setStats(statsResponse.data);
 
         const consultasResponse = await axios.get(
-          "http://localhost:8080/api/consultas"
+          "http://localhost:8081/api/consultas"
         );
         setConsultas(consultasResponse.data);
       } catch (error) {
