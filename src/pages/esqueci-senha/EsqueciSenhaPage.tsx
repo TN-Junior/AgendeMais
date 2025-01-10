@@ -6,7 +6,7 @@ const EsqueciSenhaPage: React.FC = () => {
       {/* Lado esquerdo com imagem */}
       <div className="flex-1 relative bg-green-900">
         <img
-          src="src/assets/pexels-tima.jpg"  
+          src="assets/pexels-tima.jpg"  
           alt="Background"
           className="absolute inset-0 w-full h-full object-cover opacity-70"
         />

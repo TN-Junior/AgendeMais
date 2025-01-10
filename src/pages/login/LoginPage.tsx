@@ -38,7 +38,7 @@ const LoginPage: React.FC = () => {
     <div className="flex h-screen">
       <div className="flex-1 relative bg-green-900">
         <img
-          src="src/assets/pexels-shkrabaanthony.jpg"
+          src="assets/pexels-shkrabaanthony.jpg"
           alt="Background"
           className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
