@@ -1,92 +1,51 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from 'react';
+import Sidebar from '../sidebar/Sidebar';
 
-const Dashboard: React.FC = () => {
-  const [stats, setStats] = useState({
-    consultasHoje: 0,
-    consultasCanceladas: 0,
-    medicosDisponiveis: 0,
-  });
-
-  const [consultas, setConsultas] = useState([]);
-
-  // Chamada ao backend para buscar dados
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const statsResponse = await axios.get("http://localhost:8081/api/stats");
-        setStats(statsResponse.data);
-
-        const consultasResponse = await axios.get(
-          "http://localhost:8081/api/consultas"
-        );
-        setConsultas(consultasResponse.data);
-      } catch (error) {
-        console.error("Erro ao buscar dados:", error);
-      }
-    };
-    fetchData();
-  }, []);
-
+export default function Dashboard() {
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      {/* Título */}
-      <h1 className="text-3xl font-bold text-center mb-6">
-        Gerenciamento de Consultas
-      </h1>
+    <div className="flex h-screen bg-gray-50">
+      <Sidebar />
 
-      {/* Cards Resumo */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <div className="bg-white p-6 rounded-md shadow-md text-center">
-          <h2 className="text-lg font-semibold text-gray-700">
-            Consultas Hoje
-          </h2>
-          <p className="text-2xl font-bold text-green-600">{stats.consultasHoje}</p>
-        </div>
-        <div className="bg-white p-6 rounded-md shadow-md text-center">
-          <h2 className="text-lg font-semibold text-gray-700">
-            Consultas Canceladas
-          </h2>
-          <p className="text-2xl font-bold text-red-600">{stats.consultasCanceladas}</p>
-        </div>
-        <div className="bg-white p-6 rounded-md shadow-md text-center">
-          <h2 className="text-lg font-semibold text-gray-700">
-            Médicos Disponíveis
-          </h2>
-          <p className="text-2xl font-bold text-blue-600">
-            {stats.medicosDisponiveis}
-          </p>
-        </div>
-      </div>
+      <main className="flex-1 p-10 overflow-y-auto">
+        <h1 className="text-3xl font-bold mb-1">Olá, João!</h1>
+        <p className="text-gray-600 mb-6 flex items-center gap-2">👋 Que bom ter você aqui.</p>
 
-      {/* Lista de Consultas */}
-      <div className="bg-white p-6 rounded-md shadow-md">
-        <h2 className="text-xl font-bold text-gray-700 mb-4">Consultas Agendadas</h2>
-        <div className="overflow-x-auto">
-          <table className="min-w-full bg-white border border-gray-200">
-            <thead>
-              <tr>
-                <th className="px-4 py-2 border">Paciente</th>
-                <th className="px-4 py-2 border">Médico</th>
-                <th className="px-4 py-2 border">Data</th>
-                <th className="px-4 py-2 border">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {consultas.map((consulta: any) => (
-                <tr key={consulta.id}>
-                  <td className="px-4 py-2 border">{consulta.paciente}</td>
-                  <td className="px-4 py-2 border">{consulta.medico}</td>
-                  <td className="px-4 py-2 border">{consulta.data}</td>
-                  <td className="px-4 py-2 border">{consulta.status}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+          {/* Coluna 1 */}
+          <div className="flex flex-col gap-4">
+            <div className="bg-white p-5 rounded-2xl shadow-sm min-h-[100px]">
+              <h2 className="text-base font-semibold text-gray-900">Próxima consulta</h2>
+              <p className="text-gray-700 mt-1 text-sm">Dr. Ana Beatriz</p>
+              <p className="text-gray-500 text-sm">20/04 às 14:00</p>
+            </div>
+
+            <div className="bg-white p-5 rounded-2xl shadow-sm min-h-[100px]">
+              <h2 className="text-base font-semibold text-gray-900">Último atendimento</h2>
+              <p className="text-gray-700 mt-1 text-sm">Resumo da última consulta</p>
+            </div>
+          </div>
+
+          {/* Coluna 2 */}
+          <div className="flex flex-col gap-4">
+            <div className="min-h-[100px] flex items-center justify-center">
+              <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-full shadow transition-all">
+                + Agendar nova consulta
+              </button>
+            </div>
+
+            <div className="bg-white p-5 rounded-2xl shadow-sm min-h-[100px]">
+              <h2 className="text-base font-semibold text-gray-900">Mensagens</h2>
+              <p className="text-gray-700 mt-1 text-sm">Você tem novas mensagens</p>
+            </div>
+          </div>
+
+          {/* Coluna 3 */}
+          <div className="bg-white p-5 rounded-2xl shadow-sm min-h-[208px]">
+            <h2 className="text-base font-semibold text-gray-900 mb-2">Abril 2024</h2>
+            <p className="text-gray-600 text-sm">(Calendário interativo aqui)</p>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
-};
-
-export default Dashboard;
+}
