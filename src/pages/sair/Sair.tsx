@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 export default function Sair() {
   useEffect(() => {
     // Limpar dados do usuário, tokens, etc.
-    window.location.href = '/login';
+    window.location.href = '/';
   }, []);
 
   return (
