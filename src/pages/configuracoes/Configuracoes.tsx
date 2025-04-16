@@ -1,5 +1,5 @@
 // src/pages/Configuracoes.tsx
-import React from 'react';
+
 
 export default function Configuracoes() {
   return (

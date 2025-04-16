@@ -1,5 +1,5 @@
 // src/pages/MinhasConsultas.tsx
-import React from 'react';
+
 
 export default function MinhasConsultas() {
   return (

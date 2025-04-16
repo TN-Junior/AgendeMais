@@ -1,5 +1,5 @@
 // src/pages/Perfil.tsx
-import React from 'react';
+
 
 export default function Perfil() {
   return (

@@ -1,5 +1,5 @@
 // src/pages/AgendarConsulta.tsx
-import React from 'react';
+
 
 export default function AgendarConsulta() {
   return (

@@ -1,5 +1,5 @@
 // src/pages/Mensagens.tsx
-import React from 'react';
+
 
 export default function Mensagens() {
   return (
